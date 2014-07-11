@@ -1,5 +1,5 @@
+// import _ from "vendor/underscore";
 import Ember from "ember";
-import _ from "vendor/underscore/underscore";
 
 export default Ember.ArrayController.extend({
 	offset: 0,
