@@ -1,0 +1,23 @@
+	<div class="row">
+		<div class="col-xs-12">
+			<form id="autocomplete" role="search" {{action 'search' on='submit'}}>
+				<div class="input-group">
+					{{input id="searchBox" classNames="form-control input-lg" value=searchText placeholder="Search mikomos..."}}
+					<span class="input-group-btn">
+						<submit class="btn btn-primary btn-lg" {{action 'search'}}>
+								<span class="glyphicon glyphicon-search"></span>
+						</submit>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="list-group dropdown">
+					{{#each searchResults}}
+						{{#link-to 'makom' this.id classNames="list-group-item"}}{{this.title}}{{/link-to}}
+					{{/each}}
+			</div>
+		</div>
+	</div>
