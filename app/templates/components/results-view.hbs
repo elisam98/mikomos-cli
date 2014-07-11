@@ -1,22 +1,22 @@
-	<div class="row">
-		<div class="col-xs-12">
-			Record {{offset}} to {{maxRecord}} of {{modelLength}}
-			<ul class="pager">
-				{{!#unless noPreviousPage}}
-				<li {{bind-attr class=":previous noPreviousPage:disabled"}}>
-					<a class="pointer" {{action "prevPage"}}>&larr; Previous</a>
-				</li>
-				{{!/unless}}
-				{{!#unless noNextPage}}
-				<li {{bind-attr class=":next noNextPage:disabled"}}>
-					<a class="pointer" {{action "nextPage"}} {{bind-attr disabled=noNextPage}}>Next &rarr;</a>
-				</li>
-				{{!/unless}}
-			</ul>
-		</div>
+<div class="row">
+	<div class="col-xs-12">
+		Record {{offset}} to {{maxRecord}} of {{modelLength}}
+		<ul class="pager">
+		{{!#unless noPreviousPage}}
+			<li {{bind-attr class=":previous noPreviousPage:disabled"}}>
+				<a class="pointer" {{action "prevPage"}}>&larr; Previous</a>
+			</li>
+		{{!/unless}}
+		{{!#unless noNextPage}}
+			<li {{bind-attr class=":next noNextPage:disabled"}}>
+				<a class="pointer" {{action "nextPage"}} {{bind-attr disabled=noNextPage}}>Next &rarr;</a>
+			</li>
+		{{!/unless}}
+		</ul>
 	</div>
-	<div class="row">
-		<div class="col-xs-12">
-		{{mikomos-table model=arrangedContent}}
-		</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+	{{mikomos-table model=arrangedContent}}
 	</div>
+</div>
