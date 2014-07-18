@@ -3,7 +3,7 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-	name: require('./package.json').name
+//	name: require('package.json').name
 });
 
 app.import('vendor/bootstrap/dist/css/bootstrap.css');

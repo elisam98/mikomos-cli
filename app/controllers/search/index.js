@@ -33,7 +33,7 @@ export default Ember.ArrayController.extend({
 		}
 		if(category) {
 			filtered = filtered.filter(function(item) {
-				return _.contains(item.categories, category);
+				return window._.contains(item.categories, category);
 			});
 		}
 		return filtered;
@@ -43,7 +43,7 @@ export default Ember.ArrayController.extend({
 		var model = this.get('model');
 		model.forEach(function(place) {
 			place.categories.forEach(function(category) {
-				if(!_.contains(categories, category)) {
+				if(!window._.contains(categories, category)) {
 					categories.push(category);
 				}
 			});
@@ -56,7 +56,7 @@ export default Ember.ArrayController.extend({
 		var model = this.get('model');
 		
 		model.forEach(function(place) {
-			if(!_.contains(countries, place.country) && place.country) {
+			if(!window._.contains(countries, place.country) && place.country) {
 				countries.push(place.country);
 			}
 		});
@@ -70,7 +70,7 @@ export default Ember.ArrayController.extend({
 		var country = this.get('selectedCountry');
 		model.forEach(function(place) {
 			if(place.country === country) {
-				if(!_.contains(states, place.state) && place.state) {
+				if(!window._.contains(states, place.state) && place.state) {
 					states.push(place.state);
 				}
 			}
@@ -85,7 +85,7 @@ export default Ember.ArrayController.extend({
 		var state = this.get('selectedState');
 		model.forEach(function(place) {
 			if(place.state === state) {
-				if(!_.contains(neighborhoods, place.neighborhood) && place.neighborhood) {
+				if(!window._.contains(neighborhoods, place.neighborhood) && place.neighborhood) {
 					neighborhoods.push(place.neighborhood);
 				}
 			}
