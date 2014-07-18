@@ -1,0 +1,17 @@
+{{#with model}}
+<div class="col-lg-3 col-md-4 col-sm-6">
+	<div class="thumbnail">
+		<center>
+			{{#each category in categories}}
+				<i class="flaticon flaticon-{{category}} flaticon-3x"></i>
+			{{/each}}
+		</center>
+		<div class="caption">
+			<h2>{{title}}</h2>
+			<p>{{categories}}</p>
+			<p>{{city}}, {{state}} {{country}}</p>
+			<p>{{#link-to 'makom' id classNames="btn btn-primary" }}View{{/link-to}}</p>
+		</div>
+	</div>
+</div>
+{{/with}}

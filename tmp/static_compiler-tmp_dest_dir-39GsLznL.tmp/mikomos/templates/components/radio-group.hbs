@@ -1,0 +1,11 @@
+{{#each category in content}}
+	<div class="row">
+		<div class="col-xs-12">
+			<label>
+				{{radio-button value=category selection=view.value}}
+				<i class="flaticon flaticon-{{category}} flaticon-2x"></i>
+			</label>
+			{{category}}
+		</div>
+	</div>
+{{/each}}

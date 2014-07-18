@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-xs-11">
+		<h1>Search</h1>
+	</div>
+	<div class="col-xs-1">
+		<button class="btn btn-primary pull-right" {{action 'showFilter'}}>
+			<i class="glyphicon glyphicon-filter"></i>
+			Filter
+		</button>
+	</div>
+</div>
+<hr>
+{{view "filter-modal"}}
+<div class="row">
+	<div class="col-md-3 hidden-xs hidden-sm">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="panel-title">Filter</span>
+				<a class="filter-reset" href="" {{action "resetAll"}}>reset</a>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>Name</label>
+					<a class="filter-reset" href="" {{action 'clearTerm'}}>clear</a>
+					{{input type="search" classNames="form-control" value=searchTerm placeholder="Search..."}}
+				</div>
+				<hr>
+				<div class="form-group">
+					<label>Country</label>
+					{{view Ember.Select content=countries classNames="form-control" value=selectedCountry}}
+				</div>
+				<div class="form-group">
+					<label>State</label>
+					{{view Ember.Select content=states classNames="form-control" value=selectedState}}
+				</div>
+				<div class="form-group">
+					<label>Neighborhood</label>
+					{{view Ember.Select content=neighborhoods classNames="form-control" value=neighborhood}}
+				</div>
+				<hr>
+				<div class="form-group">
+					<label>Category</label>
+					<a class="filter-reset" href="" {{action 'clearCategory'}}>clear</a>
+					{{radio-group content=categories value=selectedCategory}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		{{#if filtered}}
+			{{results-view model=filtered offset=offset}}
+		{{else}}
+			Sorry, but there are no Mikomos available within your search parameters. Please try again...
+		{{/if}}
+	</div>
+</div>

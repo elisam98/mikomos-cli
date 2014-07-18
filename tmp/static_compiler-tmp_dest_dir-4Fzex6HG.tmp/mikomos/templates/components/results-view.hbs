@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-xs-12">
+		Record {{offset}} to {{maxRecord}} of {{modelLength}}
+	</div>
+</div>
+<div class="row">
+	{{#each place in arrangedContent}}
+		{{result-thumb model=place}}
+	{{/each}}
+</div>
+<div class="row">
+	<a class="thumbnail">More <span class="glyphicon glyphicon-arrow-down"></span></a>
+</div>
