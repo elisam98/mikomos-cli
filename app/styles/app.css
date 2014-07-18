@@ -1,10 +1,20 @@
 /* html, body {margin: 20px;} */
+.text-summary {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .pointer {
 	cursor:pointer;
 }
-a.thumbnail {
-	text-decoration:none;
+
+.main-btn {
+	width: 100%;
+	padding: 4px;
+	margin-bottom: 20px;
+	border-radius: 4px;
 }
+
 div.dropdown {
 	position:absolute;
 	z-index:1200;
@@ -18,7 +28,7 @@ a.filter-reset {
 	margin-left:5px;
 }
 .wide {
-	width:100%;
+	width: 100%;
 }
 .custom-brand {
 	vertical-align: middle !important;
@@ -29,11 +39,11 @@ a.filter-reset {
 /* Flaticons */
 @font-face {
 	font-family: 'Flaticon';
-	src: url("../fonts/flaticon.eot");
-	src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"),
-	url("../fonts/flaticon.woff") format("woff"),
-	url("../fonts/flaticon.ttf") format("truetype"),
-	url("../fonts/flaticon.svg") format("svg");
+	src: url("fonts/flaticon.eot");
+	src: url("fonts/flaticon.eot#iefix") format("embedded-opentype"),
+	url("fonts/flaticon.woff") format("woff"),
+	url("fonts/flaticon.ttf") format("truetype"),
+	url("fonts/flaticon.svg") format("svg");
 }
 .flaticon {   
 	font-family: 'Flaticon';

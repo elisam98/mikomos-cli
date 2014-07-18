@@ -1,21 +1,23 @@
 <div class="container">
 <div class="row">
-	<div class="col-xs-8">
+	<div class="col-md-8 col-xs-12">
 		<h1>{{title}} {{#each categories}}<span class="flaticon flaticon-{{this}} flaticon-1x"></span> {{/each}}</h1>
 	</div>
-	<div class="col-xs-4">
+	<div class="col-md-4 col-xs-12">
 		<div class="addthis_sharing_toolbox"></div>
 	</div>
 </div>
 <div class="row">
-	<div class="col-xs-6">
+	<div class="col-md-6 col-xs-12">
 		<h3>{{address}}<br>{{city}}, {{state}} {{zip}}</h3>
 		<h4>{{phone}}</h4>
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<p><a {{bind-attr href=web_page}} target="_blank">{{web_page}}</a></p>
+		<p>
+			<a class="" {{bind-attr href=web_page}} target="_blank">Visit Website</a>
+		</p>
 		<p>{{basic_description}}</p>
 		<hr>
 		{{#if tips}}

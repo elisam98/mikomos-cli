@@ -9,6 +9,7 @@ var app = new EmberApp({
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/underscore/underscore.js');
+app.import('vendor/typeahead/typeahead.bundle.js');
 app.import('vendor/moment/moment.js');
 // Use `app.import` to add additional libraries to the generated
 // output files.

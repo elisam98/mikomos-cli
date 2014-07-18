@@ -1,22 +1,25 @@
 <div class="row">
 	<div class="col-xs-12">
-		Record {{offset}} to {{maxRecord}} of {{modelLength}}
-		<ul class="pager">
-		{{!#unless noPreviousPage}}
-			<li {{bind-attr class=":previous noPreviousPage:disabled"}}>
-				<a class="pointer" {{action "prevPage"}}>&larr; Previous</a>
-			</li>
-		{{!/unless}}
-		{{!#unless noNextPage}}
-			<li {{bind-attr class=":next noNextPage:disabled"}}>
-				<a class="pointer" {{action "nextPage"}} {{bind-attr disabled=noNextPage}}>Next &rarr;</a>
-			</li>
-		{{!/unless}}
-		</ul>
+		<p class="pull-right">
+		{{add-number offset}} to {{add-number maxRecord}} of {{add-number modelLength}}
+		</p>
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-12">
-	{{mikomos-table model=arrangedContent}}
+		<div class="list-group">
+			{{#each place in arrangedContent}}
+				{{result-thumb model=place}}
+			{{/each}}
+		</div>
 	</div>
+</div>
+{{#unless noMore}}
+<div class="row">
+	<div class="col-xs-12">
+		<center>
+			<button class="btn btn-default" {{action 'moreResults'}}>More <span class="glyphicon glyphicon-arrow-down"></span></button>
+		</center>
+	</div>
+{{/unless}}
 </div>

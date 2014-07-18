@@ -37,6 +37,15 @@ export default Ember.Component.extend({
 			return offset + limit > length;
 		}
 	}.property('offset', 'limit', 'model'),
+	noMore: function() {
+		var limit = this.get('limit');
+		var length = this.get('model').length;
+		if(limit >= length) {
+			return true;
+		} else {
+			return false;
+		}
+	}.property('offset', 'limit', 'model'),
 	actions: {
 		prevPage: function() {
 			var offset = this.get('offset');
@@ -51,6 +60,14 @@ export default Ember.Component.extend({
 			var length = this.get('model.length');
 			if(offset + limit < length) {
 				this.incrementProperty('offset', limit);
+			}
+		},
+		moreResults: function() {
+			var offset = this.get('offset');
+			var limit = this.get('limit');
+			var length = this.get('model.length');
+			if(offset + limit < length) {
+				this.incrementProperty('limit', limit);
 			}
 		}
 	}

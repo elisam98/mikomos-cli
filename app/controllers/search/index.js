@@ -1,4 +1,3 @@
-// import _ from "vendor/underscore";
 import Ember from "ember";
 
 export default Ember.ArrayController.extend({
@@ -84,7 +83,6 @@ export default Ember.ArrayController.extend({
 		var neighborhoods = [];
 		var model = this.get('model');
 		var state = this.get('selectedState');
-//		var country = this.get('selectedCountry');
 		model.forEach(function(place) {
 			if(place.state === state) {
 				if(!_.contains(neighborhoods, place.neighborhood) && place.neighborhood) {
@@ -94,7 +92,7 @@ export default Ember.ArrayController.extend({
 		});
 		neighborhoods.push('');
 		return neighborhoods.sort();
-	}.property('selectedState', 'selectedCountry'),
+	}.property('selectedState'),
 	actions: {
 		resetAll: function() {
 			this.setProperties({
@@ -110,6 +108,9 @@ export default Ember.ArrayController.extend({
 		},
 		clearCategory: function() {
 			this.set('selectedCategory', null);
+		},
+		showFilter: function() {
+			Ember.$('#modal').modal('show');
 		}
 	}
 });
