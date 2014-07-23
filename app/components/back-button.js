@@ -1,7 +1,7 @@
 import Ember from "ember";
 export default Ember.Component.extend({
 	tagName: 'button',
-	classNames: ['btn', 'navbar-btn'],
+	classNames: ['btn', 'btn-default', 'navbar-btn'],
 	click: function() {
 		history.back();
 	}
