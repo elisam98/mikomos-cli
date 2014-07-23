@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-xs-12">
+		<p class="pull-right">
+		{{add-number offset}} to {{add-number maxRecord}} of {{add-number modelLength}}
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="list-group">
+			{{#each place in arrangedContent}}
+				{{result-thumb model=place}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{#unless noMore}}
+<div class="row">
+	<div class="col-xs-12">
+		<center>
+			<button class="btn btn-default" {{action 'moreResults'}}>More <span class="glyphicon glyphicon-arrow-down"></span></button>
+		</center>
+	</div>
+{{/unless}}
+</div>
