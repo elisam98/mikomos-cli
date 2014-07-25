@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mikomos</title>
+    <title>Mikomos Tests</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,18 +11,40 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/mikomos.css">
+    <link rel="stylesheet" href="assets/qunit.css">
+    <style>
+      #ember-testing-container {
+        position: absolute;
+        background: white;
+        bottom: 0;
+        right: 0;
+        width: 640px;
+        height: 384px;
+        overflow: auto;
+        z-index: 9999;
+        border: 1px solid #ccc;
+      }
+      #ember-testing {
+        zoom: 50%;
+      }
+    </style>
   </head>
   <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
     <script>
       window.MikomosENV = {"environment":"development","baseURL":"/","locationType":"hash","EmberENV":{"FEATURES":{}},"APP":{"LOG_RESOLVER":false,"LOG_ACTIVE_GENERATION":false,"LOG_MODULE_RESOLVER":false,"LOG_VIEW_LOOKUPS":false},"LOG_MODULE_RESOLVER":false};
       window.EmberENV = window.MikomosENV.EmberENV;
     </script>
+    <script src="assets/qunit.js"></script>
+    <script src="assets/qunit-notifications.js"></script>
     <script src="assets/vendor.js"></script>
     <script src="assets/mikomos.js"></script>
+    <script src="testem.js"></script>
     <script>
-      window.Mikomos = require('mikomos/app')['default'].create(MikomosENV.APP);
+      require('mikomos/tests/test-helper');
     </script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53bc5c1879c208ea"></script>
+    <script src="assets/test-loader.js"></script>
   </body>
 </html>
